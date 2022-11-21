@@ -112,12 +112,12 @@ const Layout = ({ location, title, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
-        // comment out the original `header`, for reference
+        {/* comment out the original `header`, for reference */}
         {/* <Slice alias="header" size={isRootPath ? "large" : "medium"}>
           {title}
         </Slice> */}
         
-        // header1-4 are used as Slice
+        {/* header1-4 are used as Slice */}
         <Slice alias="header1" size={isRootPath ? "large" : "medium"}>
           Header1: Inline CSS
         </Slice>
@@ -131,7 +131,7 @@ const Layout = ({ location, title, children }) => {
           Header4: Styled-components (has props from component)
         </Slice>
         
-        // header5 is used as a normal component in legacy way.
+        {/* header5 is used as a normal component in legacy way. */}
         <Header5 size={isRootPath ? "large" : "medium"}>
           Header5: Styled-components (has props from theme, not a Slice)
         </Header5>
