@@ -63,9 +63,11 @@ const HeaderWraper = styled.div`
     font-family: ${props => props.h1Font};
 ...
 ```
-8. In `header5.js`, same as `header3.js`, has a `theme props`, but will not use as a Slice.
+8. In `header5.js`, same as `header3.js`, has a `theme props`, but will not be used as a Slice.
 
-9. In `gatsby-node.js` create slices:
+9. In `header6.js`, same as `header4.js`, has a `component props`, but also, will not be used as a Slice.
+
+10. In `gatsby-node.js` create slices:
 ```javascript
 // gatsby-node.js
   ...
@@ -86,19 +88,16 @@ const HeaderWraper = styled.div`
     id: `header4`,
     component: require.resolve(`./src/components/header4.js`),
   })
-
-  createSlice({
-    id: `header5`,
-    component: require.resolve(`./src/components/header4.js`),
-  })
   ...
 ```
 
-10. In `src/components/layout.js`:
+11. In `src/components/layout.js`:
 ```javascript
 import * as React from "react"
 import { Slice } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
+import { ThemeProvider } from "styled-components"
+import Header5 from "./header5"
+import Header6 from "./header6";
 
 // the theme for ThemeProvider of Styled Components
 const theme = {
@@ -112,30 +111,29 @@ const Layout = ({ location, title, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
-        {/* comment out the original `header`, for reference */}
-        {/* <Slice alias="header" size={isRootPath ? "large" : "medium"}>
+        <Slice alias="header" size={isRootPath ? "large" : "medium"}>
           {title}
-        </Slice> */}
-        
-        {/* header1-4 are used as Slice */}
+        </Slice>
         <Slice alias="header1" size={isRootPath ? "large" : "medium"}>
-          Header1: Inline CSS
+          {"Header1: Inline CSS"}
         </Slice>
         <Slice alias="header2" size={isRootPath ? "large" : "medium"}>
-          Header2: Styled-components (no props)
+          {"Header2: Styled-components (no props)"}
         </Slice>
         <Slice alias="header3" size={isRootPath ? "large" : "medium"}>
-          Header3: Styled-components (has props from theme)
+          {"Header3: Styled-components (has props from theme)"}
         </Slice>
         <Slice alias="header4" size={isRootPath ? "large" : "medium"}>
-          Header4: Styled-components (has props from component)
+          {"Header4: Styled-components (has props from component)"}
         </Slice>
-        
-        {/* header5 is used as a normal component in legacy way. */}
         <Header5 size={isRootPath ? "large" : "medium"}>
-          Header5: Styled-components (has props from theme, not a Slice)
+          {"(Not a Slice) Header5: Styled-components (has props from theme)"}
         </Header5>
-        
+        <Header6 size={isRootPath ? "large" : "medium"}>
+          {
+            "(Not a Slice) Header6: Styled-components (has props from component)"
+          }
+        </Header6>
         <main>{children}</main>
         <Slice alias="footer" />
       </div>
@@ -146,3 +144,5 @@ const Layout = ({ location, title, children }) => {
 export default Layout
 ```
 
+12. run `gatsby clean && gatsby develop --verbose`, works with no problem:
+13. run `gatsby clean && gatsby build --verbose`, after `gatsby serve`, problems come:
