@@ -10,7 +10,8 @@ This repo, is based on [gatsby-starter-slices starter](https://github.com/gatsby
 
 2. Installed `"styled-components": "^5.3.6"`.
 
-3. Duplicated `src/components/header.js` 5 copies, named them `header1 ... 5.js`
+3. Duplicated `src/components/header.js` 5 copies, named them `header1 ... 6.js`
+![alt text](https://github.com/nathanpate/styled-components-issues-demo-1121/blob/7f7ce1ea214f067f9ca0a0683bd9e817f2d524e9/pics-for-readme/6-header-files.png?raw=true)
 
 4. In `header1.js`, created Inline CSS:
 ```javascript
@@ -145,4 +146,11 @@ export default Layout
 ```
 
 12. run `gatsby clean && gatsby develop --verbose`, works with no problem:
+![gatsby develop result](https://github.com/nathanpate/styled-components-issues-demo-1121/blob/7f7ce1ea214f067f9ca0a0683bd9e817f2d524e9/pics-for-readme/gatsby-develop-result.png?raw=true)
 13. run `gatsby clean && gatsby build --verbose`, after `gatsby serve`, problems come:
+
+the 1st frame when loading `http://localhost:9000/`
+![the first frame when loading `http://localhost:9000/`](https://github.com/nathanpate/styled-components-issues-demo-1121/blob/7f7ce1ea214f067f9ca0a0683bd9e817f2d524e9/pics-for-readme/gatsby-build-result-frame-01.png?raw=true)
+
+the 2nd frame when loading `http://localhost:9000/`
+![the 2nd frame when loading `http://localhost:9000/`](https://github.com/nathanpate/styled-components-issues-demo-1121/blob/7f7ce1ea214f067f9ca0a0683bd9e817f2d524e9/pics-for-readme/gatsby-build-result-frame-02.png?raw=true)
