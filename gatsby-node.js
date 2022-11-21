@@ -37,6 +37,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     id: `header`,
     component: require.resolve(`./src/components/header.js`),
   })
+  
+  createSlice({
+    id: `header1`,
+    component: require.resolve(`./src/components/header1.js`),
+  })
+  createSlice({
+    id: `header2`,
+    component: require.resolve(`./src/components/header2.js`),
+  })
+
+  createSlice({
+    id: `header3`,
+    component: require.resolve(`./src/components/header3.js`),
+  })
+  createSlice({
+    id: `header4`,
+    component: require.resolve(`./src/components/header4.js`),
+  })
+
+
 
   createSlice({
     id: `footer`,
