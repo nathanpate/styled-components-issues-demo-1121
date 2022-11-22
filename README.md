@@ -150,7 +150,7 @@ export default Layout
 
 ## 13. run `gatsby clean && gatsby build --verbose`, after `gatsby serve`, problems come:
 
-  the 1st frame when loading `http://localhost:9000/`
+  the 1st frame when loading `http://localhost:9000/` is FOUT
   ![the first frame when loading `http://localhost:9000/`](https://github.com/nathanpate/styled-components-issues-demo-1121/blob/7f7ce1ea214f067f9ca0a0683bd9e817f2d524e9/pics-for-readme/gatsby-build-result-frame-01.png?raw=true)
 
   the 2nd frame when loading `http://localhost:9000/`
